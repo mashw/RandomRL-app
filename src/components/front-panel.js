@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-const FrontPanel = () => {
-    return (
-        <div>
-            <p>Front Panel</p>
-        </div>
-    )
+import StateContext from '../context/state-context';
+
+const FrontPanel = (props) => {
+  const state = useContext(StateContext);  
+  return (
+      <div>
+        <button onClick={() => props.generateMatch()}>Click</button>
+      </div>
+  )
 }
 
 export {FrontPanel as default};

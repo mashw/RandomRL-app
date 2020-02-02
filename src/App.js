@@ -1,22 +1,18 @@
 import React, { useReducer } from 'react';
 import BackPanel from './components/back-panel';
-import { defaultMatch, defaultSettings } from './util/defaults.js';
+import { defaultMatch } from './util/defaults.js';
 import FrontPanel from './components/front-panel';
-import MatchContext from './context/match-context';
 import { matchReducer } from './reducers/match-reducer';
-import { settingsReducer } from './reducers/settings-reducer';
+import StateContext from './context/state-context';
 
 
 
-function App() {
-  const [match, matchDispatch] = useReducer(matchReducer, defaultMatch);
+function App() { 
+  const [match, matchDispatch] = useReducer(matchReducer, defaultMatch)
 
-  const [players, setPlayers] = useReducer(settingsReducer, defaultSettings);
-
-  
   const generateMatch = () => {
     new Promise((resolve, reject) => {
-      resolve(matchDispatch({ type: 'GENERATE_MATCH', players: players }));
+      resolve(matchDispatch({ type: 'GENERATE_MATCH' }));
     })
     .then(() => {
        matchDispatch({ type: 'GENERATE_MAP' })
@@ -34,14 +30,13 @@ function App() {
       console.log(match)
     })
   }
-
+   
   return (
-    <MatchContext.Provider value={ match }>
+    <StateContext.Provider value={ { match } }>
       Random Rocket League
-      <FrontPanel/>
-      <button onClick={() => generateMatch()}>Click</button>
+      <FrontPanel generateMatch={generateMatch}/>
       <BackPanel/>
-    </MatchContext.Provider>
+    </StateContext.Provider>
   );
 }
 
