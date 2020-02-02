@@ -5,7 +5,8 @@ export const defaultMatch = {
     mode: "Soccar",
     map: "Beckwith Park",
     rumble: "Off",
-    mutators: "Off"
+    mutatorSetting: false,
+    mutators: false
 }
 
 export const defaultMutators = {

@@ -1,14 +1,18 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import BackPanel from './components/back-panel';
-import { defaultMatch } from './util/defaults.js';
+import { defaultMatch, defaultSettings } from './util/defaults.js';
 import FrontPanel from './components/front-panel';
 import { matchReducer } from './reducers/match-reducer';
+import { settingsReducer } from './reducers/settings-reducer';
+import SettingsModal from './components/modal.js';
 import StateContext from './context/state-context';
 
 
 
 function App() { 
-  const [match, matchDispatch] = useReducer(matchReducer, defaultMatch)
+  const [modalState, toggleModal] = useState(false);
+  const [match, matchDispatch] = useReducer(matchReducer, defaultMatch);
+  const [settings, settingsDispatch] = useReducer(settingsReducer, defaultSettings);
 
   const generateMatch = () => {
     new Promise((resolve, reject) => {
@@ -34,8 +38,9 @@ function App() {
   return (
     <StateContext.Provider value={ { match } }>
       Random Rocket League
-      <FrontPanel generateMatch={generateMatch}/>
-      <BackPanel/>
+      <FrontPanel generateMatch={generateMatch} modalState={modalState} toggleModal={toggleModal}/>
+      <BackPanel />
+      <SettingsModal modalState={modalState} toggleModal={toggleModal}/>
     </StateContext.Provider>
   );
 }
