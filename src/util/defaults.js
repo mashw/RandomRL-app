@@ -25,3 +25,10 @@ export const defaultMutators = {
     demolition: "Default",
     respawnTime: "3 Second"
 }
+
+export const defaultSettings = {
+  player1: 'Si',
+  player2: 'Ross',
+  player3: 'Mash',
+  player4: 'Stacey'
+}

@@ -1,15 +1,7 @@
 export const arrays = {
     mode: [
-      'Soccar',
-      'Soccar',
-      'Soccar',
-      'Soccar',
-      'Soccar',
-      'Hoops',
       'Hoops',
       'Hockey',
-      'Hockey',
-      'Dropshot',
       'Dropshot'
     ],    
   
@@ -66,7 +58,7 @@ export const arrays = {
 
     series: ['3'],
 
-    matchLength: ['10'],
+    length: ['10'],
     
     maxScore: [
       '1', 

@@ -1,24 +1,18 @@
-import React, { useContext, useReducer } from 'react';
-import { defaultMutators } from '../util/defaults';
+import React, { useContext } from 'react';
 import MatchContext from '../context/match-context';
 import Mutators from './mutators';
 
 
-
-
-
 const BackPanel = () => {
-  const matchState = useContext(MatchContext);
+  const match = useContext(MatchContext);
   return (
         <div>
-            {console.log(matchState)}
-            <p>Teams: {matchState.teams}</p>
-            <p>Mode: {matchState.mode}</p>
-            <p>Map: {matchState.map}</p>
-            <p>Rumble: {matchState.rumble}</p>
-           {matchState.mutators === false ? <p>Mutators: Off</p> : <Mutators/>}       
-            
-
+            <p>Blue Team: { match.team1 }</p>
+            <p>Orange Team: { match.team2 } </p>
+            <p>Mode: { match.mode }</p>
+            <p>Map: { match.map }</p>
+            <p>Rumble: { match.rumble }</p>
+            { match.mutatorSetting === false ? <p>Mutators: Off</p> : <Mutators/> }
         </div>
     )
 }
