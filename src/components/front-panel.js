@@ -1,9 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import StateContext from '../context/state-context';
-
-const FrontPanel = (props) => {
-  const state = useContext(StateContext);  
+const FrontPanel = (props) => {  
   return (
       <div>
         <button onClick={() => props.generateMatch()}>Click</button>
