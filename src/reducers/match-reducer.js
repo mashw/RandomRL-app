@@ -2,7 +2,6 @@ import { arrays } from '../util/arrays';
 import { shuffleArray, getRandom, getTeamString } from '../util/helper-functions';
 
 export const matchReducer = (match, action) => {
-  console.log(action.values);
   switch(action.type) {
     case 'GENERATE_MATCH': {     
       return {

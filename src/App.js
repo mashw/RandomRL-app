@@ -30,6 +30,12 @@ function App() {
 			})
 			.then(() => {
 				matchDispatch({ type: 'GENERATE_MUTATORS' });
+      })
+      .then(() => {
+        const min = values.minPoints;
+        const max = values.maxPoints;
+        const rNumber = 10000 + Math.floor(Math.random() * (max - min) + min);
+				valuesDispatch({ type: 'GENERATE_POINTS', rNumber });
 			});
 	};
 
@@ -54,7 +60,23 @@ function App() {
     //Rounds values up or down to closest 10 on sliders for "click" points
 		const value = getClosest(e.target.value);
 		valuesDispatch({ type: 'SET_VALUE', name, value });
-	};
+  };
+
+  const handleOdometerSetting = (e) => {
+    const value = (e.target.checked ? true : false)
+    valuesDispatch({ type: "HANDLE_ODOMETER", value})
+  }
+  
+  const setMinPoints = (e) => {
+    const value = e.target.value;
+    valuesDispatch({ type: 'SET_MIN_POINTS', value });
+  };
+
+  const setMaxPoints = (e) => {
+    const value = e.target.value;
+    valuesDispatch({ type: 'SET_MAX_POINTS', value });
+  };
+
 
 	return (
 		<StateContext.Provider value={{ match, settings, values }}>
@@ -64,11 +86,13 @@ function App() {
 			<SettingsModal
 				modalState={modalState}
 				toggleModal={toggleModal}
-				settings={settings}
-				setValue={setValue}
+        handleOdometerSetting={handleOdometerSetting}
+        setMinPoints={setMinPoints}
+        setMaxPoints={setMaxPoints}
 				setPlayerNames={setPlayerNames}
 				setShufflePlayers={setShufflePlayers}
 				setTeamSize={setTeamSize}
+				setValue={setValue}
 			/>
 		</StateContext.Provider>
 	);

@@ -28,4 +28,8 @@ export const sliderTooltips = (value) => {
     case 1: return 'Always On';
     default: return `${value * 100}%`;
   }  
+};
+
+export const getPoints = (min, max) => {
+  return 100;
 }

@@ -20,7 +20,7 @@ export const settingsReducer = (settings, action) => {
 					[action.playerId]: action.playerName
 				}
 			};
-		}
+    }    
 		default:
 			return settings;
 	}
