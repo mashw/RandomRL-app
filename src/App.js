@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, useEffect } from 'react';
 import BackPanel from './components/back-panel';
 import { defaultMatch, defaultSettings, defaultValues } from './util/defaults.js';
 import FrontPanel from './components/front-panel';
@@ -10,10 +10,13 @@ import SettingsModal from './components/modal.js';
 import StateContext from './context/state-context';
 
 function App() {
+  const settingsData = JSON.parse(localStorage.getItem('settingsData'));
+  const valuesData = JSON.parse(localStorage.getItem('valuesData'));
+
 	const [ modalState, toggleModal ] = useState(false);
-	const [ match, matchDispatch ] = useReducer(matchReducer, defaultMatch);
-	const [ settings, settingsDispatch ] = useReducer(settingsReducer, defaultSettings);
-	const [ values, valuesDispatch ] = useReducer(valuesReducer, defaultValues);
+	const [ match, matchDispatch ] = useReducer(matchReducer, (defaultMatch));
+	const [ settings, settingsDispatch ] = useReducer(settingsReducer, (settingsData || defaultSettings));
+	const [ values, valuesDispatch ] = useReducer(valuesReducer, (valuesData || defaultValues));
 
 	const generateMatch = () => {
 		new Promise((resolve, reject) => {
@@ -62,6 +65,13 @@ function App() {
 		valuesDispatch({ type: 'SET_VALUE', name, value });
   };
 
+  const resetValues = () => {
+    console.log(localStorage);
+    settingsDispatch({ type: 'RESET_SETTINGS', defaultSettings });
+    valuesDispatch({ type: 'RESET_VALUES', defaultValues });
+    console.log(localStorage);
+  }
+
   const handleOdometerSetting = (e) => {
     const value = (e.target.checked ? true : false)
     valuesDispatch({ type: "HANDLE_ODOMETER", value})
@@ -77,16 +87,21 @@ function App() {
     valuesDispatch({ type: 'SET_MAX_POINTS', value });
   };
 
+  useEffect(() => {
+    localStorage.setItem('settingsData', JSON.stringify(settings));
+    localStorage.setItem('valuesData', JSON.stringify(values));
+  });
+
 
 	return (
 		<StateContext.Provider value={{ match, settings, values }}>
-			Random Rocket League
 			<FrontPanel generateMatch={generateMatch} modalState={modalState} toggleModal={toggleModal} />
 			<BackPanel />
 			<SettingsModal
 				modalState={modalState}
 				toggleModal={toggleModal}
         handleOdometerSetting={handleOdometerSetting}
+        resetValues={resetValues}
         setMinPoints={setMinPoints}
         setMaxPoints={setMaxPoints}
 				setPlayerNames={setPlayerNames}

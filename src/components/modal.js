@@ -30,6 +30,7 @@ const SettingsModal = (props) => {
 				onChange={(e) => props.setShufflePlayers(e)}
 				checked={state.settings.shufflePlayers}
 			/>
+      <label htmlFor="shufflePlayers">Shuffle Players</label>
 
 			{/* Player Name Inputs */}
 			<div>
@@ -203,6 +204,7 @@ const SettingsModal = (props) => {
 
 				
 			</div>
+      <button onClick={() => props.resetValues()}>Reset to Default Values</button>
 			<button onClick={() => props.toggleModal(false)}>Close</button>
 		</Modal>
 	);

@@ -18,7 +18,6 @@ export const getTeamString = (array) => {
 };
 
 export const getClosest = (value) => {
-  console.log((Math.round(value / 10) * 10));
   return (Math.round(value / 10) * 10);
 };
 
@@ -32,4 +31,4 @@ export const sliderTooltips = (value) => {
 
 export const getPoints = (min, max) => {
   return 100;
-}
+};
