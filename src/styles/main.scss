@@ -1,0 +1,49 @@
+//  background: url(../images/bg/1.jpg) no-repeat;
+body, html {
+  color: $off-white;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.wrapper {
+  height: 100vh;
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url(../images/bg/1.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  animation-name: panning;
+	animation-duration: 55s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.mutators {
+  h5 {
+    display: inline;
+  }
+  p {
+    display: inline;
+  }
+}
+
+
+//KEYFRAMES
+@keyframes panning {
+  from {
+    transform: scale(1, 1);
+}
+to { 
+    transform: scale(1.7, 1.7);
+}
+}

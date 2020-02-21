@@ -20,11 +20,10 @@ const BackPanel = () => {
         //Adding 10000 to value in order to force 4 digit odometer, hiding leading digit with CSS
         value={state.values.odometerValue + 10000}
         format="(dddd)"
-        duration="3500"
+        duration="3500"        
         /> :
         null
       }
-
 		</div>    
 	);
 };

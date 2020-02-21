@@ -32,3 +32,13 @@ export const sliderTooltips = (value) => {
 export const getPoints = (min, max) => {
   return 100;
 };
+
+export const bgShuffler = () => {
+  const rNumber = () => {
+    const min = Math.ceil(1);
+    const max = Math.floor(22);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+  const imgUrl = require(`../images/bg/${rNumber()}.jpg`);
+  document.querySelector('.bg').style.backgroundImage = `url(${imgUrl})`;
+}
