@@ -1,0 +1,35 @@
+.mutators {
+  //border: 1px solid green;
+  margin-top: -20px;
+  max-height: 100%;
+    h4 {
+      display: inline;
+    }
+    p {
+      display: inline;
+    }
+    ul {
+      //border: 1px solid blue;
+      font-size: 0.9rem;
+      display: inline-block;
+      p {
+        margin-left: 2px;
+      }
+    }
+}
+
+#mutators-title {
+  //border: 1px solid red;
+  margin-top: 12px;
+  display: inline-block;
+  text-decoration: underline;
+  vertical-align: top;
+}
+
+@media all and (min-width: 992px) {
+  .mutators {
+    ul {
+    font-size: 1rem;
+  }
+  }
+}

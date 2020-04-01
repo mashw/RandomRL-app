@@ -1,49 +1,92 @@
 //  background: url(../images/bg/1.jpg) no-repeat;
 body, html {
-  color: $off-white;
+  font-family: Ftura;
+  color: $off-black;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
 .wrapper {
+  //height: calc(100vh - 60px);  ADSPACE
+  //border: 1px dashed blueviolet;
   height: 100vh;
   position: relative;
 }
 
 .bg {
-  position: absolute;
-  width: 100%;
-  left: 0px;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: url(../images/bg/1.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
   animation-name: panning;
-	animation-duration: 55s;
+	animation-duration: 100s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
+  background-image: url(../images/bg/1.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  transition: background-image 2.5s ease;
+  width: 100%;
+  z-index: 0;
 }
 
-.mutators {
-  h5 {
-    display: inline;
+.ad-bottom {
+  background-color: $off-black;
+  background-image: url('https://via.placeholder.com/468x60');
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.settings-button {
+  z-index: 98;
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  img {
+    width: 40px;
+    transition: transform 0.5s ease-in-out;
   }
-  p {
-    display: inline;
+  img:hover {
+    transform: scale(1.1);
+		//transform: rotate(-36deg); //FOR NON TOUCH SCREENS
   }
 }
 
 
 //KEYFRAMES
 @keyframes panning {
-  from {
-    transform: scale(1, 1);
+  0% {
+    transform: scale(1, 1) translate(0);
+   }
+   25% {
+     transform: scale(1.15, 1.15) translate(-25px, 20px);
+   }
+   50% {
+     transform: scale(1.2, 1.2) translate(15px, -20px);
+   }
+   75% {
+     transform: scale(1.24, 1.24) translate(-25px, 20px);
+   }
+   100% {
+     transform: scale(1.15, 1.15) translate(-15px, -30px);
+   }
 }
-to { 
-    transform: scale(1.7, 1.7);
+
+//FONTS
+@font-face {
+  font-family: "Ftura";
+  src: url("../fonts/futura_book-webfont.woff") format("woff")
 }
+@font-face {
+  font-family: "Bourgeois";
+  src: url("../fonts/BourgeoisCondensed.woff") format("woff")
 }

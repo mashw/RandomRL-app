@@ -2,7 +2,7 @@ export const defaultMatch = {
     blueTeam: "Player 1 + Player 2",
     orangeTeam: "Player 3 + Player 4",
     mode: "Soccar",
-    map: "Beckwith Park",
+    map: undefined,
     rumble: "Off",
     mutatorSetting: false,
     mutators: false
@@ -56,7 +56,7 @@ export const defaultValues = {
   modeValue: 0.5,
   rumbleValue: 0.5,
   mutatorValue: 0.5,
-  odometerSetting: true,
+  odometerSetting: false,
   odometerValue: 0,
   minPoints: 250,
   maxPoints: 1200

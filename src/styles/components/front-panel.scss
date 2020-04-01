@@ -1,0 +1,68 @@
+.front-panel {
+	//border: 1px solid fuchsia;
+	height: auto;
+	width: 80%;
+	text-align: center;
+}
+
+.logo-wrapper {
+  //border: 1px solid hotpink;
+  width: 100%;
+  img {
+    width: 100%;
+  }
+}
+
+.button-wrapper {
+	//border: 1px solid fuchsia;
+	display: flex;
+	flex-direction: row; //Needed to make element full width  <---
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.generator-button__box {
+	//flex-basis: 100%; //Needed to make element full width <---
+	display: flex;
+	flex-direction: row; //Needed to make element full width  <---
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	img {
+    margin-top: 10px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    width: 90%;
+    filter: none;
+    transition: transform 0.05s ease-out, filter 0.15s ease-in;
+  }
+  img:hover {
+    filter: invert(100%);
+  }
+	img:active {
+		transform: translateY(2px);
+	}
+}
+
+
+
+//MEDIA QUERIES
+
+//Tablets
+@media all and (min-width: 600px) {
+  .generator-button__box {
+    img {
+      width: 75%;
+    }
+  }
+}
+
+@media all and (min-width: 992px) {
+  .generator-button__box {
+    img {
+      width: 60%;
+    }
+  }
+}

@@ -35,7 +35,7 @@ export const arrays = {
       'Forbidden Temple',
       'Tokyo Underpass',
       'Arctagon',
-      'Two Pillars',
+      'Pillars',
       'Cosmic',
       'Double Goal',
       'Octagon',
@@ -44,7 +44,10 @@ export const arrays = {
       'Throwback Stadium',
       'Rivals Arena',
       'Urban Central (Night)',
-      'Urban Central (Dawn)'
+      'Urban Central (Dawn)',
+      // 'Forbidden Temple',
+      // 'Salty Shores (Night)',
+      // 'Farmstead (Night)'
     ],
   
     rumble: [

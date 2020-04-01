@@ -2,7 +2,7 @@ import React, { useReducer, useState, useEffect } from 'react';
 import BackPanel from './components/back-panel';
 import { defaultMatch, defaultSettings, defaultValues } from './util/defaults.js';
 import FrontPanel from './components/front-panel';
-import { bgShuffler, getClosest } from './util/helper-functions';
+import { bgShuffler, getClosest, getMapPreview } from './util/helper-functions';
 import { matchReducer } from './reducers/match-reducer';
 import { valuesReducer } from './reducers/values-reducer';
 import { settingsReducer } from './reducers/settings-reducer';
@@ -24,7 +24,7 @@ function App() {
 		})
 			.then(() => {
 				matchDispatch({ type: 'GENERATE_MAP' });
-			})
+      })
 			.then(() => {
 				const playerCount = settings.teamSize * 2;
 				const playerArray = Object.values(settings.players).slice(0, playerCount);
@@ -73,7 +73,6 @@ function App() {
 		console.log(localStorage);
 		settingsDispatch({ type: 'RESET_SETTINGS', defaultSettings });
 		valuesDispatch({ type: 'RESET_VALUES', defaultValues });
-		console.log(localStorage);
 	};
 
 	const handleOdometerSetting = (e) => {
@@ -93,18 +92,36 @@ function App() {
 
 	//These effects run only on page load because second parameter is an empty array
 	useEffect(() => {
-		bgShuffler();
+    bgShuffler();
+    //BELOW CODE CYCLES BACKGROUND IMAGES BUT NEEDS ALTERING TO PREVENT ONLOAD FLASH, POSSIBLY LOAD NEXT IMAGE INTO A DIV BELOW AND THEN FADE INTO THAT
+    // const interval = setInterval(() => {
+    //   bgShuffler();
+    // }, 10000);
+    // return () => clearInterval(interval);
 	}, []);
 
+  //Save settings to local storage if settings or values change
 	useEffect(() => {
 		localStorage.setItem('settingsData', JSON.stringify(settings));
-		localStorage.setItem('valuesData', JSON.stringify(values));
-	});
+    localStorage.setItem('valuesData', JSON.stringify(values));
+  }, [settings, values]);
+
+  //Set the map preview image when map is set in state
+  useEffect(() => {
+    if(match.map !== undefined) {
+      getMapPreview(match.map);
+    }
+  }, [match.map]);
+
 
 	return (
+    <>
 		<div className="wrapper">
 			<div className="bg" />
 			<StateContext.Provider value={{ match, settings, values }}>
+      <div className="settings-button">
+          <img src={require('../src/images/cog.svg')} onClick={() => toggleModal(true)} alt="Settings Button" />
+        </div>
 				<div className="scene">
 					<div className="card">
 						<div className="card__face card__face--front">
@@ -120,6 +137,9 @@ function App() {
 					</div>
 				</div>
 
+
+        
+
 				<SettingsModal
 					modalState={modalState}
 					toggleModal={toggleModal}
@@ -134,6 +154,9 @@ function App() {
 				/>
 			</StateContext.Provider>
 		</div>
+    {/* <div className="ad-bottom">
+    </div> */}
+    </>
 	);
 }
 

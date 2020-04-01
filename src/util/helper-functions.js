@@ -36,9 +36,16 @@ export const getPoints = (min, max) => {
 export const bgShuffler = () => {
   const rNumber = () => {
     const min = Math.ceil(1);
-    const max = Math.floor(22);
+    const max = Math.floor(2);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
-  const imgUrl = require(`../images/bg/${rNumber()}.jpg`);
+  const imgUrl = require(`../images/bg/${rNumber()}.jpg`);  
   document.querySelector('.bg').style.backgroundImage = `url(${imgUrl})`;
+};
+
+export const getMapPreview = (map) => {
+  const mapString = map.replace(/[\W]+/g, '').toLowerCase();
+  const mapPreviewUrl = require(`../images/maps/${mapString}.png`);
+  document.querySelector('.map-preview').style.backgroundImage = `url(${mapPreviewUrl})`;
+  console.log(mapString);
 }

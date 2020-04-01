@@ -1,6 +1,9 @@
-@import './styles/card-flip.scss';
-@import './styles/Base/common.scss';
 @import './styles/Base/colours';
-@import './styles/main';
+@import './styles/main.scss';
+@import './styles/card';
+@import './styles/components/front-panel.scss';
+@import './styles/components/back-panel.scss';
+@import './styles/components/mutators';
 @import './styles/components/odometer.css';
+@import './styles/components/settings-modal.scss';
 @import './styles/Base/switch';

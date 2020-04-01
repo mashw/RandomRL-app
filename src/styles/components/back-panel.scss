@@ -1,0 +1,48 @@
+.back-panel {
+  .underline {
+    text-decoration: underline;
+  }
+  p {
+    margin-left: 15px;
+  }
+}
+
+.odometer-wrapper {
+    //border: 1px solid hotpink;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 10%;
+
+}
+
+.odometer {
+    //border: 1px solid orange;
+    font-size: 3rem;
+}
+
+.map-preview {
+  //border: 1px solid hotpink;
+  width: 100%;  height: 100%;
+  bottom: 0;
+  position: absolute;
+  z-index: -1;
+  border-radius: 7px;
+  opacity: 0;
+  background-image: url('../../images/maps/badlands.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  transition: opacity 2s ease-in-out;
+}
+
+.card.is-flipped .map-preview {
+  transition-delay: 0.75s;
+  opacity: 1;
+}
+
+@media all and (min-width: 992px) {
+  .back-panel {
+    font-size: 1.2rem;
+  }
+}
