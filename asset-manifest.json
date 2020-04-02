@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/randomrl-app/static/css/main.adf28f10.chunk.css",
-    "main.js": "/randomrl-app/static/js/main.7022c200.chunk.js",
-    "main.js.map": "/randomrl-app/static/js/main.7022c200.chunk.js.map",
+    "main.css": "/randomrl-app/static/css/main.80000517.chunk.css",
+    "main.js": "/randomrl-app/static/js/main.b26aff5a.chunk.js",
+    "main.js.map": "/randomrl-app/static/js/main.b26aff5a.chunk.js.map",
     "runtime-main.js": "/randomrl-app/static/js/runtime-main.bc584c5d.js",
     "runtime-main.js.map": "/randomrl-app/static/js/runtime-main.bc584c5d.js.map",
-    "static/js/2.4bcfc76b.chunk.js": "/randomrl-app/static/js/2.4bcfc76b.chunk.js",
-    "static/js/2.4bcfc76b.chunk.js.map": "/randomrl-app/static/js/2.4bcfc76b.chunk.js.map",
+    "static/js/2.8a6b9a7b.chunk.js": "/randomrl-app/static/js/2.8a6b9a7b.chunk.js",
+    "static/js/2.8a6b9a7b.chunk.js.map": "/randomrl-app/static/js/2.8a6b9a7b.chunk.js.map",
     "index.html": "/randomrl-app/index.html",
-    "precache-manifest.690e8854ca00063cf4547f78d996ec8a.js": "/randomrl-app/precache-manifest.690e8854ca00063cf4547f78d996ec8a.js",
+    "precache-manifest.c19e9e104531bc9b4fcc7b38fc1485c1.js": "/randomrl-app/precache-manifest.c19e9e104531bc9b4fcc7b38fc1485c1.js",
     "service-worker.js": "/randomrl-app/service-worker.js",
-    "static/css/main.adf28f10.chunk.css.map": "/randomrl-app/static/css/main.adf28f10.chunk.css.map",
-    "static/js/2.4bcfc76b.chunk.js.LICENSE": "/randomrl-app/static/js/2.4bcfc76b.chunk.js.LICENSE",
+    "static/css/main.80000517.chunk.css.map": "/randomrl-app/static/css/main.80000517.chunk.css.map",
+    "static/js/2.8a6b9a7b.chunk.js.LICENSE": "/randomrl-app/static/js/2.8a6b9a7b.chunk.js.LICENSE",
     "static/media/1.jpg": "/randomrl-app/static/media/1.956cfb09.jpg",
     "static/media/2.jpg": "/randomrl-app/static/media/2.2c136c15.jpg",
-    "static/media/index.scss": "/randomrl-app/static/media/futura_book-webfont.08f799e5.woff",
+    "static/media/index.scss": "/randomrl-app/static/media/optionsbg.b6fa625b.png",
     "static/media/Mockup.jpg": "/randomrl-app/static/media/Mockup.6bbf9bab.jpg",
     "static/media/aquadome.png": "/randomrl-app/static/media/aquadome.ebc0cf0a.png",
     "static/media/arctagon.png": "/randomrl-app/static/media/arctagon.6e6cf3e3.png",
@@ -35,8 +35,8 @@
     "static/media/doublegoal.png": "/randomrl-app/static/media/doublegoal.ae79890e.png",
     "static/media/dunkhouse.png": "/randomrl-app/static/media/dunkhouse.5341aec3.png",
     "static/media/farmstead.png": "/randomrl-app/static/media/farmstead.c68e771c.png",
-    "static/media/gen-button.svg": "/randomrl-app/static/media/gen-button.7d7cf06b.svg",
-    "static/media/logo.svg": "/randomrl-app/static/media/logo.2d0e1982.svg",
+    "static/media/gen-button.svg": "/randomrl-app/static/media/gen-button.bb253610.svg",
+    "static/media/logo.png": "/randomrl-app/static/media/logo.08b178f8.png",
     "static/media/mannfield.png": "/randomrl-app/static/media/mannfield.057df8ea.png",
     "static/media/mannfieldnight.png": "/randomrl-app/static/media/mannfieldnight.1af20abd.png",
     "static/media/mannfieldsnowy.png": "/randomrl-app/static/media/mannfieldsnowy.8174353f.png",
@@ -62,8 +62,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.bc584c5d.js",
-    "static/js/2.4bcfc76b.chunk.js",
-    "static/css/main.adf28f10.chunk.css",
-    "static/js/main.7022c200.chunk.js"
+    "static/js/2.8a6b9a7b.chunk.js",
+    "static/css/main.80000517.chunk.css",
+    "static/js/main.b26aff5a.chunk.js"
   ]
 }

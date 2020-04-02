@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ee0b3821ccc9867aa48856bd38403a70",
+    "revision": "7e36e0a7df2e7cd321042ce4cb99aded",
     "url": "/randomrl-app/index.html"
   },
   {
-    "revision": "e2afa87f03bd8f65fc19",
-    "url": "/randomrl-app/static/css/main.adf28f10.chunk.css"
+    "revision": "2755c750526050a29a1b",
+    "url": "/randomrl-app/static/css/main.80000517.chunk.css"
   },
   {
-    "revision": "8763cfaba1bcd3f89b36",
-    "url": "/randomrl-app/static/js/2.4bcfc76b.chunk.js"
+    "revision": "e4fc7771aaee38a2d52b",
+    "url": "/randomrl-app/static/js/2.8a6b9a7b.chunk.js"
   },
   {
     "revision": "28ac78fef8675bfe412d94015e05d458",
-    "url": "/randomrl-app/static/js/2.4bcfc76b.chunk.js.LICENSE"
+    "url": "/randomrl-app/static/js/2.8a6b9a7b.chunk.js.LICENSE"
   },
   {
-    "revision": "e2afa87f03bd8f65fc19",
-    "url": "/randomrl-app/static/js/main.7022c200.chunk.js"
+    "revision": "2755c750526050a29a1b",
+    "url": "/randomrl-app/static/js/main.b26aff5a.chunk.js"
   },
   {
     "revision": "cbdf5a3945861a00f31e",
@@ -120,12 +120,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/randomrl-app/static/media/futura_book-webfont.08f799e5.woff"
   },
   {
-    "revision": "7d7cf06b5ae6e2d217e827b849dc150f",
-    "url": "/randomrl-app/static/media/gen-button.7d7cf06b.svg"
+    "revision": "bb2536101ac9f21824157d04d0d5431d",
+    "url": "/randomrl-app/static/media/gen-button.bb253610.svg"
   },
   {
-    "revision": "2d0e198297bee3b898a4cf9211c2d168",
-    "url": "/randomrl-app/static/media/logo.2d0e1982.svg"
+    "revision": "08b178f84d66013ef94e1ac3b6109c21",
+    "url": "/randomrl-app/static/media/logo.08b178f8.png"
   },
   {
     "revision": "057df8ea862993c45c7f40cb2cadfa99",
@@ -150,6 +150,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "3f95d71b5dc81e41a507d46137d30a6d",
     "url": "/randomrl-app/static/media/octagon.3f95d71b.png"
+  },
+  {
+    "revision": "b6fa625b8730c52de9b969893811f00a",
+    "url": "/randomrl-app/static/media/optionsbg.b6fa625b.png"
   },
   {
     "revision": "890c675807f4a07c7189e5ab18b42a77",
