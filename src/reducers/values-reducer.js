@@ -36,6 +36,12 @@ export const valuesReducer = (values, action) => {
         ...action.defaultValues
       }
     }
+    case 'SET_SPIN_COUNTER': {
+      return {
+        ...values,
+        spinNumber: action.value
+      }
+    }
 		default:
 			return values;
 	}

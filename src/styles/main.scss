@@ -16,7 +16,7 @@ body, html {
 
 .bg {
   animation-name: panning;
-	animation-duration: 100s;
+	animation-duration: 98s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
   background-image: url(../images/bg/1.jpg) no-repeat;
@@ -29,7 +29,6 @@ body, html {
   position: absolute;
   transition: background-image 2.5s ease;
   width: 100%;
-  z-index: 0;
 }
 
 .ad-bottom {
@@ -47,13 +46,15 @@ body, html {
 }
 
 .settings-button {
-  z-index: 98;
-  position: fixed;
+  z-index: 1;
+  position: absolute;
   right: 15px;
   top: 15px;
   img {
     width: 40px;
-    transition: transform 0.5s ease-in-out;
+    opacity: 75%;
+    transition: transform 0.1s ease-in-out;
+    cursor: pointer;
   }
   img:hover {
     transform: scale(1.1);
@@ -87,6 +88,22 @@ body, html {
   src: url("../fonts/futura_book-webfont.woff") format("woff")
 }
 @font-face {
+  font-family: "futura-pt";
+  src: url("../fonts/futura-pt-book.otf") format("woff")
+}
+@font-face {
+  font-family: "futura-pt-condensed";
+  src: url("../fonts/futura-pt-cond-book.otf") format("woff")
+}
+@font-face {
   font-family: "Bourgeois";
   src: url("../fonts/BourgeoisCondensed.woff") format("woff")
+}
+@font-face {
+  font-family: "Bourgeois-medium";
+  src: url("../fonts/BourgeoisMedium.ttf") format("woff")
+}
+@font-face {
+  font-family: "Bourgeois-light";
+  src: url("../fonts/BourgeoisLight.ttf") format("woff")
 }

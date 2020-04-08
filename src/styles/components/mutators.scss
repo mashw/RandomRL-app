@@ -13,7 +13,7 @@
       font-size: 0.9rem;
       display: inline-block;
       p {
-        margin-left: 2px;
+        margin-left: -3px;
       }
     }
 }
@@ -22,14 +22,29 @@
   //border: 1px solid red;
   margin-top: 12px;
   display: inline-block;
-  text-decoration: underline;
+  //text-decoration: underline;
+      //background-image: url(../../images/optionsbg.png);
+    background-size: 100% 100%;
+    //font-size: 1.1rem;
   vertical-align: top;
+  background-color: rgba(5, 0, 5, 0.72);
+  border-radius: 5px;
+  padding: 3px 8px 3px 8px;
+  font-family: Bourgeois-medium;
+  font-size: 1.1rem;
 }
 
 @media all and (min-width: 992px) {
   .mutators {
     ul {
+    margin-top: 10px;
     font-size: 1rem;
+    p {
+      margin-left: 2px;
+    }
+  }  
   }
+  #mutators-title {
+    font-size: 1.5rem;
   }
 }

@@ -5,7 +5,7 @@
 	flex-direction: row;
 	justify-content: center;
   align-items: center;
-  z-index: 99;
+  z-index: 2;
 }
 
 .ReactModal__Content {
@@ -14,7 +14,7 @@
   box-shadow: 2px 2px 5px rgba(5, 0, 5, 0.30);
 	border-radius: 7px;
 	width: 95%;
-	height: 90%;
+	height: 100%;
   color: #f2f2f2;
   text-shadow: 1px 1px 2px rgba(5, 0, 5, 0.72);
   outline: none;
@@ -49,9 +49,9 @@
   background-image: url(../../images/optionsbg.png);
   background-size: 100% 100%;
   h2 {
-    font-family: Bourgeois;
+    font-family: Ftura;
     font-size: 1.65rem;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     text-align: center;
     
   }
@@ -164,6 +164,7 @@ label[for="teams"] {
   width: 90%;
   button {
     margin: 10px 10px 0 0;
+    padding: 3px 10px 3px 10px;
     background-color: rgba(5, 0, 5, 0.72);
     border-radius: 5px;
     border: none;
@@ -172,7 +173,7 @@ label[for="teams"] {
     color:#f2f2f2;
     font-size: 0.9rem;
     font-family: Ftura;
-    padding: 5px 20px;
+    //padding: 5px 20px;
   }
   button:hover {
     background-color: rgba(19, 19, 19, 0.72);
@@ -293,7 +294,7 @@ input[type=range]:focus::-ms-fill-upper {
 //MEDIA QUERIES
 
 //Tablets
-@media all and (min-width: 468px) {
+@media all and (min-width: 580px) {
 	.ReactModal__Content {
     //border-top: 20px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(15px);

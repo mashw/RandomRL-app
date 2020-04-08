@@ -59,5 +59,6 @@ export const defaultValues = {
   odometerSetting: false,
   odometerValue: 0,
   minPoints: 250,
-  maxPoints: 1200
+  maxPoints: 1200,
+  spinNumber: 0
 };

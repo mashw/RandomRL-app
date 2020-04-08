@@ -1,6 +1,8 @@
 import React, { useReducer, useState, useEffect } from 'react';
 import BackPanel from './components/back-panel';
 import { defaultMatch, defaultSettings, defaultValues } from './util/defaults.js';
+import { dbase } from './firebase.js';
+
 import FrontPanel from './components/front-panel';
 import { bgShuffler, getClosest, getMapPreview } from './util/helper-functions';
 import { matchReducer } from './reducers/match-reducer';
@@ -12,6 +14,7 @@ import StateContext from './context/state-context';
 function App() {
 	const settingsData = JSON.parse(localStorage.getItem('settingsData'));
 	const valuesData = JSON.parse(localStorage.getItem('valuesData'));
+	const [ spinCount, setSpinCount ] = useState(0);
 
 	const [ modalState, toggleModal ] = useState(false);
 	const [ match, matchDispatch ] = useReducer(matchReducer, defaultMatch);
@@ -24,16 +27,37 @@ function App() {
 		})
 			.then(() => {
 				matchDispatch({ type: 'GENERATE_MAP' });
-      })
-			.then(() => {
+	  })
+	  .then(() => {		  
+        dbase.ref()          
+          .once('value')
+          .then((snapshot) => {
+			const val = snapshot.val();
+			const currentNumber = val.spinNumber;  
+			dbase.ref().set({
+				spinNumber: currentNumber + 1
+			  })
+			  setSpinCount(currentNumber);
+			console.log('#: ' + currentNumber);
+          })
+          .catch((e) => {
+            console.log('Error fetching data', e);
+        }
+		);
+	  })
+	  .then(() => {
 				const playerCount = settings.teamSize * 2;
 				const playerArray = Object.values(settings.players).slice(0, playerCount);
-				const shuffle = settings.shufflePlayers;
+        		const shuffle = settings.shufflePlayers;
 				matchDispatch({ type: 'GENERATE_TEAMS', playerCount, playerArray, shuffle });
 			})
 			.then(() => {
 				matchDispatch({ type: 'GENERATE_MUTATORS' });
-      })
+	  })
+	  .then(() => {
+		  const settingsButton = document.getElementsByClassName('settings-button');
+		  settingsButton[0].style.zIndex = "0";
+	  })
       .then(() => {
         const card = document.querySelector('.card');
         card.classList.toggle('is-flipped');
@@ -88,11 +112,16 @@ function App() {
 	const setMaxPoints = (e) => {
 		const value = e.target.value;
 		valuesDispatch({ type: 'SET_MAX_POINTS', value });
-	};
+  };
+  
+  const returnToFront = () => {
+    const card = document.querySelector('.card');
+    card.classList.toggle('is-flipped');
+  };
 
 	//These effects run only on page load because second parameter is an empty array
 	useEffect(() => {
-    bgShuffler();
+	bgShuffler();
     //BELOW CODE CYCLES BACKGROUND IMAGES BUT NEEDS ALTERING TO PREVENT ONLOAD FLASH, POSSIBLY LOAD NEXT IMAGE INTO A DIV BELOW AND THEN FADE INTO THAT
     // const interval = setInterval(() => {
     //   bgShuffler();
@@ -132,7 +161,10 @@ function App() {
 							/>
 						</div>
 						<div className="card__face card__face--back">
-							<BackPanel />
+							<BackPanel 
+                returnToFront={returnToFront}
+					spinCount={spinCount}
+              />
 						</div>
 					</div>
 				</div>
