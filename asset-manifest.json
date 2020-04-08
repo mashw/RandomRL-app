@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/randomrl-app/static/css/main.80000517.chunk.css",
-    "main.js": "/randomrl-app/static/js/main.b26aff5a.chunk.js",
-    "main.js.map": "/randomrl-app/static/js/main.b26aff5a.chunk.js.map",
+    "main.css": "/randomrl-app/static/css/main.c6bb2c89.chunk.css",
+    "main.js": "/randomrl-app/static/js/main.1df6533a.chunk.js",
+    "main.js.map": "/randomrl-app/static/js/main.1df6533a.chunk.js.map",
     "runtime-main.js": "/randomrl-app/static/js/runtime-main.bc584c5d.js",
     "runtime-main.js.map": "/randomrl-app/static/js/runtime-main.bc584c5d.js.map",
-    "static/js/2.8a6b9a7b.chunk.js": "/randomrl-app/static/js/2.8a6b9a7b.chunk.js",
-    "static/js/2.8a6b9a7b.chunk.js.map": "/randomrl-app/static/js/2.8a6b9a7b.chunk.js.map",
+    "static/js/2.07789b7b.chunk.js": "/randomrl-app/static/js/2.07789b7b.chunk.js",
+    "static/js/2.07789b7b.chunk.js.map": "/randomrl-app/static/js/2.07789b7b.chunk.js.map",
     "index.html": "/randomrl-app/index.html",
-    "precache-manifest.c19e9e104531bc9b4fcc7b38fc1485c1.js": "/randomrl-app/precache-manifest.c19e9e104531bc9b4fcc7b38fc1485c1.js",
+    "precache-manifest.23c692d97900745686498fc5a145164a.js": "/randomrl-app/precache-manifest.23c692d97900745686498fc5a145164a.js",
     "service-worker.js": "/randomrl-app/service-worker.js",
-    "static/css/main.80000517.chunk.css.map": "/randomrl-app/static/css/main.80000517.chunk.css.map",
-    "static/js/2.8a6b9a7b.chunk.js.LICENSE": "/randomrl-app/static/js/2.8a6b9a7b.chunk.js.LICENSE",
+    "static/css/main.c6bb2c89.chunk.css.map": "/randomrl-app/static/css/main.c6bb2c89.chunk.css.map",
+    "static/js/2.07789b7b.chunk.js.LICENSE": "/randomrl-app/static/js/2.07789b7b.chunk.js.LICENSE",
     "static/media/1.jpg": "/randomrl-app/static/media/1.956cfb09.jpg",
     "static/media/2.jpg": "/randomrl-app/static/media/2.2c136c15.jpg",
     "static/media/index.scss": "/randomrl-app/static/media/optionsbg.b6fa625b.png",
@@ -36,6 +36,7 @@
     "static/media/dunkhouse.png": "/randomrl-app/static/media/dunkhouse.5341aec3.png",
     "static/media/farmstead.png": "/randomrl-app/static/media/farmstead.c68e771c.png",
     "static/media/gen-button.svg": "/randomrl-app/static/media/gen-button.bb253610.svg",
+    "static/media/goback-button2.svg": "/randomrl-app/static/media/goback-button2.820c7456.svg",
     "static/media/logo.png": "/randomrl-app/static/media/logo.08b178f8.png",
     "static/media/mannfield.png": "/randomrl-app/static/media/mannfield.057df8ea.png",
     "static/media/mannfieldnight.png": "/randomrl-app/static/media/mannfieldnight.1af20abd.png",
@@ -62,8 +63,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.bc584c5d.js",
-    "static/js/2.8a6b9a7b.chunk.js",
-    "static/css/main.80000517.chunk.css",
-    "static/js/main.b26aff5a.chunk.js"
+    "static/js/2.07789b7b.chunk.js",
+    "static/css/main.c6bb2c89.chunk.css",
+    "static/js/main.1df6533a.chunk.js"
   ]
 }
