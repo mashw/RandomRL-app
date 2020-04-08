@@ -29,6 +29,7 @@ body, html {
   position: absolute;
   transition: background-image 2.5s ease;
   width: 100%;
+  z-index: 0;
 }
 
 .ad-bottom {
@@ -46,8 +47,8 @@ body, html {
 }
 
 .settings-button {
-  z-index: 1;
-  position: absolute;
+  z-index: 1 !important;
+  position: fixed;
   right: 15px;
   top: 15px;
   img {
