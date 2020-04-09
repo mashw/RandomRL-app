@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/randomrl-app/static/css/main.4dd430ec.chunk.css",
+    "main.css": "/randomrl-app/static/css/main.b241fab8.chunk.css",
     "main.js": "/randomrl-app/static/js/main.1df6533a.chunk.js",
     "main.js.map": "/randomrl-app/static/js/main.1df6533a.chunk.js.map",
     "runtime-main.js": "/randomrl-app/static/js/runtime-main.bc584c5d.js",
@@ -8,9 +8,9 @@
     "static/js/2.07789b7b.chunk.js": "/randomrl-app/static/js/2.07789b7b.chunk.js",
     "static/js/2.07789b7b.chunk.js.map": "/randomrl-app/static/js/2.07789b7b.chunk.js.map",
     "index.html": "/randomrl-app/index.html",
-    "precache-manifest.7abd5fc20b78e3cee25dbeaaa79aee59.js": "/randomrl-app/precache-manifest.7abd5fc20b78e3cee25dbeaaa79aee59.js",
+    "precache-manifest.963420f6d1c02ed848c2057eb2935199.js": "/randomrl-app/precache-manifest.963420f6d1c02ed848c2057eb2935199.js",
     "service-worker.js": "/randomrl-app/service-worker.js",
-    "static/css/main.4dd430ec.chunk.css.map": "/randomrl-app/static/css/main.4dd430ec.chunk.css.map",
+    "static/css/main.b241fab8.chunk.css.map": "/randomrl-app/static/css/main.b241fab8.chunk.css.map",
     "static/js/2.07789b7b.chunk.js.LICENSE": "/randomrl-app/static/js/2.07789b7b.chunk.js.LICENSE",
     "static/media/1.jpg": "/randomrl-app/static/media/1.956cfb09.jpg",
     "static/media/2.jpg": "/randomrl-app/static/media/2.2c136c15.jpg",
@@ -64,7 +64,7 @@
   "entrypoints": [
     "static/js/runtime-main.bc584c5d.js",
     "static/js/2.07789b7b.chunk.js",
-    "static/css/main.4dd430ec.chunk.css",
+    "static/css/main.b241fab8.chunk.css",
     "static/js/main.1df6533a.chunk.js"
   ]
 }
