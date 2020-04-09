@@ -4,7 +4,7 @@ import { defaultMatch, defaultSettings, defaultValues } from './util/defaults.js
 import { dbase } from './firebase.js';
 
 import FrontPanel from './components/front-panel';
-import { bgShuffler, getClosest, getMapPreview } from './util/helper-functions';
+import { bgShuffler, getClosest, getMapPreview, heightSetter } from './util/helper-functions';
 import { matchReducer } from './reducers/match-reducer';
 import { valuesReducer } from './reducers/values-reducer';
 import { settingsReducer } from './reducers/settings-reducer';
@@ -122,6 +122,7 @@ function App() {
 	//These effects run only on page load because second parameter is an empty array
 	useEffect(() => {
 	bgShuffler();
+	heightSetter();
     //BELOW CODE CYCLES BACKGROUND IMAGES BUT NEEDS ALTERING TO PREVENT ONLOAD FLASH, POSSIBLY LOAD NEXT IMAGE INTO A DIV BELOW AND THEN FADE INTO THAT
     // const interval = setInterval(() => {
     //   bgShuffler();

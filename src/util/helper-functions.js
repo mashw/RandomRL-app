@@ -49,3 +49,7 @@ export const getMapPreview = (map) => {
   document.querySelector('.map-preview').style.backgroundImage = `url(${mapPreviewUrl})`;
   console.log(mapString);
 }
+
+export const heightSetter = () => {
+  document.getElementsByClassName("wrapper")[0].style.height = window.innerHeight + "px";
+}
