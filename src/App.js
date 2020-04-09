@@ -123,6 +123,7 @@ function App() {
 	useEffect(() => {
 	bgShuffler();
 	heightSetter();
+	window.addEventListener("resize", () => document.getElementsByClassName("wrapper")[0].style.height = window.innerHeight + "px");
     //BELOW CODE CYCLES BACKGROUND IMAGES BUT NEEDS ALTERING TO PREVENT ONLOAD FLASH, POSSIBLY LOAD NEXT IMAGE INTO A DIV BELOW AND THEN FADE INTO THAT
     // const interval = setInterval(() => {
     //   bgShuffler();
@@ -142,7 +143,6 @@ function App() {
       getMapPreview(match.map);
     }
   }, [match.map]);
-
 
 	return (
     <>
