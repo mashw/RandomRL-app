@@ -117,6 +117,10 @@ function App() {
   const returnToFront = () => {
     const card = document.querySelector('.card');
     card.classList.toggle('is-flipped');
+    setTimeout(function(){
+      const settingsButton = document.getElementsByClassName('settings-button');
+		  settingsButton[0].style.zIndex = "3";
+    }, 1000);    
   };
 
 	//These effects run only on page load because second parameter is an empty array

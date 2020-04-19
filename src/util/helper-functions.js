@@ -36,7 +36,7 @@ export const getPoints = (min, max) => {
 export const bgShuffler = () => {
   const rNumber = () => {
     const min = Math.ceil(1);
-    const max = Math.floor(2);
+    const max = Math.floor(15);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
   const imgUrl = require(`../images/bg/${rNumber()}.jpg`);  

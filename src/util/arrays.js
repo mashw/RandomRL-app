@@ -45,7 +45,6 @@ export const arrays = {
       'Rivals Arena',
       'Urban Central (Night)',
       'Urban Central (Dawn)',
-      // 'Forbidden Temple',
       // 'Salty Shores (Night)',
       // 'Farmstead (Night)'
     ],
