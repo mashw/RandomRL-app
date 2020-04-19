@@ -38,7 +38,7 @@ export const defaultSettings = {
     player8: 'Player 8'
   },  
   teamSize: 2,
-  shufflePlayers: false,
+  shufflePlayers: true,
 };
 
 // export const defaultPlayers = {
@@ -56,7 +56,7 @@ export const defaultValues = {
   modeValue: 0.5,
   rumbleValue: 0.5,
   mutatorValue: 0.5,
-  odometerSetting: false,
+  odometerSetting: true,
   odometerValue: 0,
   minPoints: 250,
   maxPoints: 1200,
