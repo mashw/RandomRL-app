@@ -68,7 +68,12 @@ function App() {
 				const rNumber = 10000 + Math.floor(Math.random() * (max - min) + min);
 				valuesDispatch({ type: 'GENERATE_POINTS', rNumber });
       })
-      
+      .then(() => {				
+        setTimeout(function(){
+          const front = document.getElementsByClassName('front-panel');
+          front[0].style.visibility = "hidden";
+        }, 635);  
+			})
 	};
 
 	const setTeamSize = (e) => {
