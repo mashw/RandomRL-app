@@ -67,6 +67,12 @@ function App() {
 				const max = values.maxPoints;
 				const rNumber = 10000 + Math.floor(Math.random() * (max - min) + min);
 				valuesDispatch({ type: 'GENERATE_POINTS', rNumber });
+      })
+      .then(() => {				
+        setTimeout(function(){
+          const front = document.getElementsByClassName('front-panel');
+          front[0].style.visibility = "hidden";
+        }, 635);  
 			});
 	};
 
@@ -119,8 +125,10 @@ function App() {
     card.classList.toggle('is-flipped');
     setTimeout(function(){
       const settingsButton = document.getElementsByClassName('settings-button');
-		  settingsButton[0].style.zIndex = "3";
-    }, 1000);    
+      settingsButton[0].style.zIndex = "3";
+      const front = document.getElementsByClassName('front-panel');
+      front[0].style.visibility = "visible";
+    }, 750);
   };
 
 	//These effects run only on page load because second parameter is an empty array

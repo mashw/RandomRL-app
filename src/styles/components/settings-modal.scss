@@ -45,6 +45,7 @@
 }
 
 .h2wrapper {
+  display: none;
   //border: 1px solid pink;
   background-image: url(../../images/optionsbg.png);
   background-size: 100% 100%;
@@ -65,6 +66,7 @@
 }
 
 .team-size_dropdown {
+  margin-top: 15px;
 	display: inline-block;
 	text-align-last: center;
 	width: 25%;
@@ -160,7 +162,7 @@ label[for="teams"] {
 }
 
 .settings-buttons {
-  margin: 30px auto 0 auto;
+  margin: 15px auto 15px auto;
   width: 90%;
   button {
     margin: 10px 10px 0 0;
@@ -301,9 +303,12 @@ input[type=range]:focus::-ms-fill-upper {
     box-shadow: 2px 2px 5px rgba(5, 0, 5, 0.30);
     border-radius: 7px;
     width: 50%;
-    height: 90%;
+    height: auto;
     color: #f2f2f2;
     text-shadow: 1px 1px 2px rgba(5, 0, 5, 0.72);
     outline: none;
+  }
+  .h2wrapper {
+    display: block;
   }
 }
