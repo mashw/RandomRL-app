@@ -28,10 +28,10 @@ export const defaultMutators = {
 
 export const defaultSettings = {
   players: {
-    player1: 'Player 1',
-    player2: 'Player 2',
-    player3: 'Player 3',
-    player4: 'Player 4',
+    player1: 'DMS',
+    player2: 'Ross',
+    player3: 'Mash',
+    player4: 'Stacey',
     player5: 'Player 5',
     player6: 'Player 6',
     player7: 'Player 7',
