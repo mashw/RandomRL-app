@@ -25,8 +25,8 @@ export const settingsReducer = (settings, action) => {
       return {
         ...action.defaultSettings
       }
-    }
-		default:
+	}
+			default:
 			return settings;
 	}
 };

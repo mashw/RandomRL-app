@@ -42,6 +42,12 @@ export const valuesReducer = (values, action) => {
         spinNumber: action.value
       }
     }
+    case 'SET_ACC': {
+     return {
+      ...values,
+      accumulator: action.value
+     }
+    }
 		default:
 			return values;
 	}

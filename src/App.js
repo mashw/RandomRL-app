@@ -73,7 +73,7 @@ function App() {
           const front = document.getElementsByClassName('front-panel');
           front[0].style.visibility = "hidden";
         }, 635);  
-			})
+			});
 	};
 
 	const setTeamSize = (e) => {
@@ -135,12 +135,13 @@ function App() {
 	useEffect(() => {
 	bgShuffler();
 	heightSetter();
+	document.addEventListener("keypress", (event) => {
+		if (event.keyCode === 13) {
+		const main = document.getElementsByClassName("main-content");
+		main[0].innerHTML = '';
+	}
+	})
 	window.addEventListener("resize", () => document.getElementsByClassName("wrapper")[0].style.height = window.innerHeight + "px");
-    //BELOW CODE CYCLES BACKGROUND IMAGES BUT NEEDS ALTERING TO PREVENT ONLOAD FLASH, POSSIBLY LOAD NEXT IMAGE INTO A DIV BELOW AND THEN FADE INTO THAT
-    // const interval = setInterval(() => {
-    //   bgShuffler();
-    // }, 10000);
-    // return () => clearInterval(interval);
 	}, []);
 
   //Save settings to local storage if settings or values change
@@ -155,13 +156,14 @@ function App() {
       getMapPreview(match.map);
     }
   }, [match.map]);
-
+  	
 	return (
     <>
 		<div className="wrapper">
 			<div className="bg" />
 			<StateContext.Provider value={{ match, settings, values }}>
-      <div className="settings-button">
+			<span className="main-content">
+			<div className="settings-button">
           <img src={require('../src/images/cog.svg')} onClick={() => toggleModal(true)} alt="Settings Button" />
         </div>
 				<div className="scene">
@@ -197,6 +199,8 @@ function App() {
 					setTeamSize={setTeamSize}
 					setValue={setValue}
 				/>
+			</span>
+      
 			</StateContext.Provider>
 		</div>
     {/* <div className="ad-bottom">

@@ -55,10 +55,11 @@ export const defaultSettings = {
 export const defaultValues = {
   modeValue: 0.5,
   rumbleValue: 0.5,
-  mutatorValue: 0.5,
+  mutatorValue: 0.6,
   odometerSetting: true,
   odometerValue: 0,
   minPoints: 250,
   maxPoints: 1200,
-  spinNumber: 0
+  spinNumber: 0,
+  accumulator: "off"
 };
