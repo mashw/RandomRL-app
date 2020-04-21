@@ -3,7 +3,9 @@ import Odometer from 'react-odometerjs';
 
 const Accumulator = () => {
   return (
-		<h1>TETSTSTESTSTTSTS</h1>
+    <div className="accumulator">
+    
+    </div>		
 	);
 };
 

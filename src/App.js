@@ -173,8 +173,7 @@ function App() {
 		<div className="wrapper">
 			<div className="bg" />
 			<StateContext.Provider value={{ match, settings, values }}>
-			<span className="main-content">
-			<Accumulator></Accumulator>
+			<span className="main-content"><Accumulator></Accumulator>			
 			<div className="settings-button">
           <img src={require('../src/images/cog.svg')} onClick={() => toggleModal(true)} alt="Settings Button" />
         </div>
