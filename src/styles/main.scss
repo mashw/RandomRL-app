@@ -64,6 +64,11 @@ body, html {
   }
 }
 
+.accumulator {
+  color: white;
+  z-index: 100 !important;
+}
+
 
 //KEYFRAMES
 @keyframes panning {

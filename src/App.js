@@ -4,6 +4,7 @@ import { defaultMatch, defaultSettings, defaultValues } from './util/defaults.js
 import { dbase } from './firebase.js';
 
 import FrontPanel from './components/front-panel';
+import Accumulator from './components/Accumulator';
 import { bgShuffler, getClosest, getMapPreview, heightSetter } from './util/helper-functions';
 import { matchReducer } from './reducers/match-reducer';
 import { valuesReducer } from './reducers/values-reducer';
@@ -16,6 +17,7 @@ function App() {
 	const valuesData = JSON.parse(localStorage.getItem('valuesData'));
 	const [ spinCount, setSpinCount ] = useState(0);
 
+	const [ accState, setAcc ] = useState(false);
 	const [ modalState, toggleModal ] = useState(false);
 	const [ match, matchDispatch ] = useReducer(matchReducer, defaultMatch);
 	const [ settings, settingsDispatch ] = useReducer(settingsReducer, settingsData || defaultSettings);
@@ -137,12 +139,20 @@ function App() {
 	heightSetter();
 	document.addEventListener("keypress", (event) => {
 		if (event.keyCode === 13) {
-		const main = document.getElementsByClassName("main-content");
-		main[0].innerHTML = '';
+		//const main = document.getElementsByClassName("main-content");
+		//main[0].innerHTML = '';
+		setAcc(true);
 	}
 	})
 	window.addEventListener("resize", () => document.getElementsByClassName("wrapper")[0].style.height = window.innerHeight + "px");
 	}, []);
+
+	useEffect(() => {
+		console.log("trigger");
+		if (accState === true) {
+			document.getElementsByClassName("main-content")[0].innerHTML = '';
+		}
+	}, [accState])
 
   //Save settings to local storage if settings or values change
 	useEffect(() => {
@@ -156,13 +166,15 @@ function App() {
       getMapPreview(match.map);
     }
   }, [match.map]);
-  	
-	return (
-    <>
+
+  //{accState === false ? <div className="bg wrapper">Test</div> : <div>Test2</div>}
+  return (
+<>
 		<div className="wrapper">
 			<div className="bg" />
 			<StateContext.Provider value={{ match, settings, values }}>
 			<span className="main-content">
+			<Accumulator></Accumulator>
 			<div className="settings-button">
           <img src={require('../src/images/cog.svg')} onClick={() => toggleModal(true)} alt="Settings Button" />
         </div>
@@ -206,7 +218,7 @@ function App() {
     {/* <div className="ad-bottom">
     </div> */}
     </>
-	);
+  )
 }
 
 export default App;
