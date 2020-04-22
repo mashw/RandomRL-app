@@ -42,6 +42,48 @@ export const valuesReducer = (values, action) => {
         spinNumber: action.value
       }
     }
+    case 'RESET_CURRENT_SPIN': {
+      return {
+        ...values,
+        currentOdoValue: action.value
+      }
+    }
+    case 'RESET_TOTAL_SPIN': {
+      return {
+        ...values,
+        totalOdoValue: action.value
+      }
+    }
+    case 'SET_AMOUNT_OF_SPINS': {
+      return {
+        ...values,
+        amountSpins: action.amount
+      }
+    }
+    case 'SET_SPINS_LEFT': {
+      return {
+        ...values,
+        spinsLeft: action.spinsLeft
+      }
+    }
+    case 'SET_SPIN_NUMBER': {
+      return {
+        ...values,
+        spinNumber: action.spinNumber
+      }
+    }
+    case 'SET_CURRENT_SPIN': {
+      return {
+        ...values,
+        currentOdoValue: action.currentSpin
+      }
+    }
+    case 'SET_TOTAL_SPIN': {
+      return {
+        ...values,
+        totalOdoValue: values.totalOdoValue + action.currentSpin
+      }
+    }
 		default:
 			return values;
 	}

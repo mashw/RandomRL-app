@@ -14,14 +14,16 @@ import StateContext from './context/state-context';
 
 function App() {
 	const settingsData = JSON.parse(localStorage.getItem('settingsData'));
-	const valuesData = JSON.parse(localStorage.getItem('valuesData'));
+	//const valuesData = JSON.parse(localStorage.getItem('valuesData'));
 	const [ spinCount, setSpinCount ] = useState(0);
 
 	const [ accState, setAcc ] = useState(false);
 	const [ modalState, toggleModal ] = useState(false);
 	const [ match, matchDispatch ] = useReducer(matchReducer, defaultMatch);
-	const [ settings, settingsDispatch ] = useReducer(settingsReducer, settingsData || defaultSettings);
-	const [ values, valuesDispatch ] = useReducer(valuesReducer, valuesData || defaultValues);
+  //const [ settings, settingsDispatch ] = useReducer(settingsReducer, settingsData || defaultSettings);
+  const [ settings, settingsDispatch ] = useReducer(settingsReducer, defaultSettings);
+  const [ values, valuesDispatch ] = useReducer(valuesReducer, defaultValues);
+  //const [ values, valuesDispatch ] = useReducer(valuesReducer, valuesData || defaultValues);
 
 	const generateMatch = () => {
 		new Promise((resolve, reject) => {
@@ -50,7 +52,7 @@ function App() {
 	  .then(() => {
 				const playerCount = settings.teamSize * 2;
 				const playerArray = Object.values(settings.players).slice(0, playerCount);
-        		const shuffle = settings.shufflePlayers;
+        		const shuffle = settings.playerShuffle;
 				matchDispatch({ type: 'GENERATE_TEAMS', playerCount, playerArray, shuffle });
 			})
 			.then(() => {
@@ -74,7 +76,7 @@ function App() {
         setTimeout(function(){
           const front = document.getElementsByClassName('front-panel');
           front[0].style.visibility = "hidden";
-        }, 635);  
+        }, 400);  
 			});
 	};
 
@@ -84,8 +86,9 @@ function App() {
 	};
 
 	const setShufflePlayers = (e) => {
-		const shuffleValue = e.target.checked;
-		settingsDispatch({ type: 'SET_SHUFFLE_PLAYERS', shuffleValue });
+		const shuffleValue = e.target.checked ? true : false;
+    settingsDispatch({ type: 'SET_SHUFFLE_PLAYERS', shuffleValue });
+    console.log(settings.playerShuffle)
 	};
 
 	const setPlayerNames = (e) => {
@@ -133,6 +136,36 @@ function App() {
     }, 750);
   };
 
+  const setSpinAmount = (e) => {
+    const amount = e.target.value;
+    valuesDispatch( { type: 'SET_AMOUNT_OF_SPINS', amount });
+  }
+
+  const startAcc = () => {
+    document.getElementsByClassName("accButton")[0].disabled = true;
+    let spinNumber = 1;
+    const value = 0;
+      valuesDispatch( { type: 'RESET_TOTAL_SPIN', value });
+      valuesDispatch( { type: 'RESET_CURRENT_SPIN', value });
+    valuesDispatch( { type: 'SET_SPIN_NUMBER', spinNumber } );
+    const loop = setInterval(function() {
+      if (spinNumber <= values.amountSpins)    {
+        valuesDispatch( { type: 'SET_SPIN_NUMBER', spinNumber } );
+      const min = values.minPoints;
+      const max = values.maxPoints;
+			const currentSpin = 10000 + Math.floor(Math.random() * (max - min) + min);
+      valuesDispatch({ type: 'SET_CURRENT_SPIN', currentSpin });
+      valuesDispatch( { type: 'SET_TOTAL_SPIN', currentSpin } );
+      } else {
+        clearInterval(loop);
+			  const rNumber = Math.floor(Math.random() * (8 - 1) + 1);
+        const wow = new Audio(require(`./sounds/complete/${rNumber}.mp3`));
+      wow.play();
+      }
+      spinNumber++;
+    }, 3000);
+  }
+
 	//These effects run only on page load because second parameter is an empty array
 	useEffect(() => {
 	bgShuffler();
@@ -150,8 +183,17 @@ function App() {
 	useEffect(() => {
 		console.log("trigger");
 		if (accState === true) {
-			document.getElementsByClassName("main-content")[0].innerHTML = '';
-		}
+      const value = 0;
+      valuesDispatch( { type: 'RESET_TOTAL_SPIN', value });
+      valuesDispatch( { type: 'RESET_CURRENT_SPIN', value });
+      const wow = new Audio(require('./sounds/1.mp3'));
+      wow.play();
+      document.getElementsByClassName("card")[0].style.marginTop = -2000 + "px";
+      setTimeout(() => {
+        document.getElementsByClassName("accumulator")[0].style.opacity = 1;
+      },350);
+      document.getElementsByClassName("accumulator")[0].style.zIndex = 5;
+    }    
 	}, [accState])
 
   //Save settings to local storage if settings or values change
@@ -171,9 +213,9 @@ function App() {
   return (
 <>
 		<div className="wrapper">
-			<div className="bg" />
+			<div className="bg" />      
 			<StateContext.Provider value={{ match, settings, values }}>
-			<span className="main-content"><Accumulator></Accumulator>			
+			<span className="main-content">			
 			<div className="settings-button">
           <img src={require('../src/images/cog.svg')} onClick={() => toggleModal(true)} alt="Settings Button" />
         </div>
@@ -193,8 +235,16 @@ function App() {
               />
 						</div>
 					</div>
-				</div>
+          <Accumulator
+            setSpinAmount={setSpinAmount}
+            startAcc={startAcc}
+          >
 
+          </Accumulator>
+          
+				</div>
+    
+        
 
         
 

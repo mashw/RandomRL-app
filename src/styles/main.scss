@@ -30,7 +30,7 @@ body, html {
   position: absolute;
   transition: background-image 2.5s ease;
   width: 100%;
-  z-index: 0;
+  z-index: -2;
 }
 
 .ad-bottom {
@@ -64,9 +64,105 @@ body, html {
   }
 }
 
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  //border: 1px solid hotpink;
+  text-align: center;
+}
+
 .accumulator {
+  z-index: -10;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
   position: fixed;
-  top: -500px;
+  width: 50vw;
+  height: 50vh;
+}
+
+.acc-wrapper {
+  z-index: -5;
+  padding: 30px;
+  color: white;  
+  background-color: rgba(5, 0, 5, 0.55);
+  height: 100%;
+  width: 100%;
+  //border: 2px solid white;
+  border-radius: 7px;
+  h1 {
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+  }
+  h2 {
+    display: block;
+    margin-right: 10px;
+  }
+  .odo {
+    margin-top: -1px;
+    display: block;
+  }
+  input {
+    display: inline-block;
+    width: 40%;
+    height: 50px;
+		border-radius: 5px;
+		background: rgba(5, 0, 5, 1);
+		border: 1px solid white;
+		color: #f2f2f2;
+		font-family: Bourgeois;
+		font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  button {
+    margin-left: 10px;
+    background-color: rgba(5, 0, 5, 0.72);
+    border-radius: 5px;
+    border: 1px solid white;
+    display:inline-block;
+    cursor:pointer;
+    color:#f2f2f2;
+    font-size: 1rem;
+    font-family: Ftura;
+    width: 40%;
+    height: 50px;
+    //padding: 5px 20px;
+  }
+  button:hover {
+    background-color: rgba(19, 19, 19, 0.72);
+    }
+  button:focus {
+    outline: none;
+  }
+   button:active {
+     outline: none;
+     border: none;
+      position:relative;
+      top:1px;
+  }
+  button:disabled {
+    background-color: rgba(19, 19, 19, 0.1);
+    cursor: not-allowed;
+  }
+}
+
+.total-box {
+  padding: 20px;
+  margin-top: 50px;
+  text-align: center;
+  -webkit-box-reflect: below -40px -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(40%, transparent), to(rgba(255, 255, 255, 0.5)));
 }
 
 

@@ -9,7 +9,7 @@ export const settingsReducer = (settings, action) => {
 		case 'SET_SHUFFLE_PLAYERS': {
 			return {
 				...settings,
-				shufflePlayers: action.shuffleValue
+				playerShuffle: action.shuffleValue
 			};
 		}
 		case 'SET_PLAYER_NAMES': {

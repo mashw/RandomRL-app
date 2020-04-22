@@ -168,7 +168,7 @@ const SettingsModal = (props) => {
 						<input
 							type="checkbox"
 							onChange={(e) => props.setShufflePlayers(e)}
-							checked={state.values.shufflePlayers}
+							checked={state.settings.playerShuffle}
 						/>
 						<span className="slider" />
 					</label>
