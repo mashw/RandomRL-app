@@ -168,6 +168,7 @@ function App() {
 
 	//These effects run only on page load because second parameter is an empty array
 	useEffect(() => {
+  localStorage.clear();
 	bgShuffler();
 	heightSetter();
 	document.addEventListener("keypress", (event) => {
